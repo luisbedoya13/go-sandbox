@@ -1,0 +1,13 @@
+Table users {
+  id varchar [primary key, note: 'ULID']
+  email varchar
+  created_at timestamp
+}
+
+Table accounts {
+  id varchar [primary key, note: 'ULID']
+}
+
+Table pocket {
+  id varchar [primary key, note: 'ULID']
+}
