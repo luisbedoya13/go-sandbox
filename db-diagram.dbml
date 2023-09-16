@@ -1,13 +1,19 @@
+Project project_name {
+  database_type: 'DynamoDB'
+  Note: 'App de finanzas'
+}
+
 Table users {
-  id varchar [primary key, note: 'ULID']
-  email varchar
-  created_at timestamp
+  id ULID
+  email text [note: 'partition key']
+  password text
 }
 
 Table accounts {
-  id varchar [primary key, note: 'ULID']
+  id ULID [primary key]
 }
 
-Table pocket {
-  id varchar [primary key, note: 'ULID']
+Table pockets {
+  id ULID [primary key]
+  account_id ULID [ref: < accounts.id]
 }
