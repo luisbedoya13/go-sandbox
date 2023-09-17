@@ -4,7 +4,7 @@ Project project_name {
 }
 
 Table users {
-  id ULID
+  id ULID [primary key]
   email text [note: 'partition key']
   password text
 }

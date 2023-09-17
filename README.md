@@ -1,8 +1,8 @@
-# Documentación del proyecto interlagos
+# Documentación del proyecto interlagos (itlg)
 
 ## Inventario de repos
 
 | Nombre del repo | Descripción |
 | -------- | ------- |
-| docs  | documentación general del proyecto |
-| security | servicios de autenticación y autorización |
+| itlg-docs  | documentación general del proyecto y playground |
+| itlg-security | servicios de autenticación y autorización |
