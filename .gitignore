@@ -21,3 +21,4 @@
 go.work
 
 # Custom
+./playground/examples/*

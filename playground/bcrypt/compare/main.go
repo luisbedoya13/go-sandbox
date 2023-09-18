@@ -1,29 +1,21 @@
 package main
 
 import (
-	"bufio"
+	"docs/playground/files"
 	"log"
-	"os"
 
 	"golang.org/x/crypto/bcrypt"
 )
 
 func main() {
-	file, err := os.Open("./playground/examples/hash.text")
+	hash, err := files.ReadFromFile("hash.text")
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer file.Close()
-	scanner := bufio.NewScanner(file)
-	if err := scanner.Err(); err != nil {
+	err = bcrypt.CompareHashAndPassword([]byte(hash), []byte("P@ssW0rd!*"))
+	if err == nil {
+		log.Println("It works")
+	} else {
 		log.Fatal(err)
-	}
-	if scanner.Scan() {
-		bcrypt.CompareHashAndPassword([]byte(scanner.Text()), []byte("P@ssW0rd!"))
-		if err == nil {
-			log.Println("It works")
-		} else {
-			log.Fatal(err)
-		}
 	}
 }
