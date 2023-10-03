@@ -1,10 +1,10 @@
 package main
 
 import (
-	"docs/playground/files"
 	"time"
 
 	"aidanwoods.dev/go-paseto"
+	"github.com/luisbedoya13/sandbox/utils"
 )
 
 var key paseto.V4SymmetricKey
@@ -26,6 +26,6 @@ func main() {
 
 	encrypted := token.V4Encrypt(key, nil)
 
-	files.WriteToFile("paseto.text", encrypted)
-	files.WriteToFile("hex.text", key.ExportHex())
+	utils.WriteToFile("paseto.text", encrypted)
+	utils.WriteToFile("hex.text", key.ExportHex())
 }

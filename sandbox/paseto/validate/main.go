@@ -1,15 +1,15 @@
 package main
 
 import (
-	"docs/playground/files"
 	"fmt"
 	"log"
 
 	"aidanwoods.dev/go-paseto"
+	"github.com/luisbedoya13/sandbox/utils"
 )
 
 func main() {
-	hex, err := files.ReadFromFile("hex.text")
+	hex, err := utils.ReadFromFile("hex.text")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -18,7 +18,7 @@ func main() {
 		log.Fatal(err)
 	}
 	parser := paseto.NewParser()
-	encrypted, err := files.ReadFromFile("paseto.text")
+	encrypted, err := utils.ReadFromFile("paseto.text")
 	if err != nil {
 		log.Fatal(err)
 	}

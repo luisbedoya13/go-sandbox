@@ -1,4 +1,4 @@
-module docs
+module github.com/luisbedoya13/sandbox
 
 go 1.21.1
 

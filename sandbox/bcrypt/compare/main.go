@@ -1,14 +1,14 @@
 package main
 
 import (
-	"docs/playground/files"
 	"log"
 
+	"github.com/luisbedoya13/sandbox/utils"
 	"golang.org/x/crypto/bcrypt"
 )
 
 func main() {
-	hash, err := files.ReadFromFile("hash.text")
+	hash, err := utils.ReadFromFile("hash.text")
 	if err != nil {
 		log.Fatal(err)
 	}

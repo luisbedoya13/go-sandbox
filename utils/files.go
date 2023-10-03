@@ -1,4 +1,4 @@
-package files
+package utils
 
 import (
 	"bufio"
@@ -7,7 +7,7 @@ import (
 )
 
 func WriteToFile(fileName string, content string) error {
-	path := fmt.Sprintf("./playground/examples/%s", fileName)
+	path := fmt.Sprintf("./data/%s", fileName)
 	f, err := os.OpenFile(path, os.O_RDWR|os.O_CREATE|os.O_TRUNC, 0660)
 	if err != nil {
 		return err
@@ -18,7 +18,7 @@ func WriteToFile(fileName string, content string) error {
 }
 
 func ReadFromFile(fileName string) (string, error) {
-	path := fmt.Sprintf("./playground/examples/%s", fileName)
+	path := fmt.Sprintf("./data/%s", fileName)
 	file, err := os.Open(path)
 	if err != nil {
 		return "", err

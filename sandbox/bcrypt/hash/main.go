@@ -1,8 +1,9 @@
 package main
 
 import (
-	"docs/playground/files"
 	"log"
+
+	"github.com/luisbedoya13/sandbox/utils"
 
 	"golang.org/x/crypto/bcrypt"
 )
@@ -12,7 +13,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	err = files.WriteToFile("hash.text", string(hash))
+	err = utils.WriteToFile("hash.text", string(hash))
 	if err != nil {
 		log.Fatal(err)
 	}
